@@ -4,10 +4,6 @@ const nextConfig = {
   output: 'standalone',
   images: {
     unoptimized: true
-  },
-  // Optimalizace pro produkci
-  experimental: {
-    optimizeCss: true
   }
 }
 
