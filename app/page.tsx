@@ -17,7 +17,7 @@ export default function Home() {
             />
           </div>
           <h1>Momnts</h1>
-          <p className="subtitle">Každý den je příležitost být lepším rodičem</p>
+          <p className="subtitle">Každý den je příležitost být lepším rodičem!</p>
           <p className="description">
             Objevte sílu denní reflexe. Sledujte své rodičovské momenty,
             získejte personalizované tipy a budujte hlubší vztah se svými dětmi.
