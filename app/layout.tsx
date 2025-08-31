@@ -2,10 +2,10 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Momnts - Zachyť své momenty',
-  description: 'Aplikace pro zachycení a sdílení vašich nejcennějších momentů s hlasovými poznámkami.',
-  keywords: 'momenty, hlasové poznámky, aplikace, android, ios',
-  authors: [{ name: 'Momnts Team' }],
+  title: 'MOMNTS – Každý den lepší rodič',
+  description: 'Mindful parenting s denní reflexí. Víc přítomnosti, méně stresu.',
+  keywords: 'momnts, mindful parenting, reflexe, rodičovství, android, ios',
+  authors: [{ name: 'MOMNTS' }],
 }
 
 export const viewport = {
@@ -24,7 +24,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>
