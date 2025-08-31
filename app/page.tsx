@@ -118,6 +118,17 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Parallax Section */}
+      <section className="parallax-section">
+        <div className="parallax-content">
+          <h2>Každý moment počítá</h2>
+          <p>
+            Rodičovství není o dokonalosti, ale o přítomnosti.
+            Momnts vám pomůže najít radost v každodenních okamžicích s vašimi dětmi.
+          </p>
+        </div>
+      </section>
+
       {/* Activity Suggestions Section */}
       <section className="section">
         <div className="container">

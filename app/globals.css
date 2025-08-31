@@ -394,6 +394,73 @@ body {
   }
 }
 
+/* Paralax sekce */
+.parallax-section {
+  height: 60vh;
+  min-height: 400px;
+  background-image: url('/family-time.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(14, 34, 48, 0.4); /* tmavý overlay pro lepší čitelnost */
+  z-index: 1;
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.parallax-content h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.parallax-content p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobilní zařízení - vypnout fixed attachment */
+@media (max-width: 768px) {
+  .parallax-section {
+    background-attachment: scroll;
+    height: 50vh;
+    min-height: 300px;
+  }
+
+  .parallax-content h2 {
+    font-size: 2rem;
+  }
+
+  .parallax-content p {
+    font-size: 1.1rem;
+  }
+}
+
 /* Download tlačítka */
 .download-buttons {
   display: flex;
