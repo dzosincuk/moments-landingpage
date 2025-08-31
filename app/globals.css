@@ -314,7 +314,7 @@ body {
   height: 180px;
   background-size: cover;
   background-position: center;
-  background-image: url('https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=800&h=600&fit=crop&crop=faces');
+  background-image: url('/emocni-regulace.jpg');
 }
 
 .psychology-card--emotions .photo-header::after {
@@ -340,7 +340,7 @@ body {
 .psychology-card--presence .photo-side {
   position: relative;
   min-height: 230px;
-  background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&crop=faces');
+  background-image: url('/vedome-rodicovstvi.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -359,7 +359,14 @@ body {
   height: 180px;
   background-size: cover;
   background-position: center;
-  background-image: url('https://images.unsplash.com/photo-1609220136736-443140cffec6?w=800&h=600&fit=crop&crop=faces');
+  background-image: url('/pozitivni-vzorce.jpg');
+}
+
+/* Mobilní úprava pro pozitivní vzorce - posun fotky dolů */
+@media (max-width: 768px) {
+  .psychology-card--habits .photo-header {
+    background-position: center 30%; /* posun dolů na mobilu */
+  }
 }
 
 .psychology-card--habits .photo-header::after {
