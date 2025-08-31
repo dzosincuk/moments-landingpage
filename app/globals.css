@@ -321,7 +321,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(248,200,166,.35), rgba(248,200,166,.15));
+  background: linear-gradient(to bottom, rgba(248,200,166,.45), rgba(248,200,166,.25));
   mix-blend-mode: multiply;
 }
 
@@ -353,61 +353,21 @@ body {
   mix-blend-mode: multiply;
 }
 
-/* Card 3: Pozitivní vzorce - polaroid v rohu */
-.psychology-card--habits {
-  padding-top: 14px;
+/* Card 3: Pozitivní vzorce - stejný layout jako první karta */
+.psychology-card--habits .photo-header {
+  position: relative;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  background-image: url('https://images.unsplash.com/photo-1609220136736-443140cffec6?w=800&h=600&fit=crop&crop=faces');
 }
 
-.psychology-card--habits .polaroid {
-  position: absolute;
-  right: 14px;
-  top: -10px;
-  width: 160px;
-  aspect-ratio: 4/3;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 10px 24px rgba(0,0,0,.18);
-  transform: rotate(4deg);
-  z-index: 2;
-  overflow: hidden;
-}
-
-@media (max-width: 680px) {
-  .psychology-card--habits .polaroid {
-    position: relative;
-    top: 0;
-    right: 0;
-    margin: 12px auto 0;
-    transform: rotate(1.5deg);
-  }
-}
-
-.psychology-card--habits .polaroid::after {
+.psychology-card--habits .photo-header::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(246,208,139,.32), rgba(246,208,139,.12));
+  background: linear-gradient(to bottom, rgba(246,208,139,.45), rgba(246,208,139,.25));
   mix-blend-mode: multiply;
-}
-
-.psychology-card--habits .photo {
-  position: absolute;
-  inset: 10px 10px 30px;
-  border-radius: 8px;
-  background-image: url('https://images.unsplash.com/photo-1609220136736-443140cffec6?w=800&h=600&fit=crop&crop=faces');
-  background-size: cover;
-  background-position: center;
-  filter: saturate(1.05);
-}
-
-.psychology-card--habits .content {
-  padding-right: 190px;
-}
-
-@media (max-width: 900px) {
-  .psychology-card--habits .content {
-    padding-right: 20px;
-  }
 }
 
 /* Hover efekty na fotky */

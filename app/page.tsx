@@ -78,7 +78,7 @@ export default function Home() {
               <div className="photo-header"></div>
               <div className="grain"></div>
               <div className="content">
-                <div className="eyebrow" style={{color: '#F8C8A6'}}>
+                <div className="eyebrow" style={{color: '#E6A373'}}>
                   <span className="dot"></span>
                   Emoční regulace
                 </div>
@@ -114,12 +114,10 @@ export default function Home() {
 
             {/* Card 3: Pozitivní vzorce */}
             <article className="psychology-card psychology-card--habits">
-              <div className="polaroid">
-                <div className="photo"></div>
-              </div>
+              <div className="photo-header"></div>
               <div className="grain"></div>
               <div className="content">
-                <div className="eyebrow" style={{color: '#F6D08B'}}>
+                <div className="eyebrow" style={{color: '#D4A574'}}>
                   <span className="dot"></span>
                   Pozitivní vzorce
                 </div>
