@@ -73,41 +73,66 @@ export default function Home() {
           </p>
 
           <div className="psychology-grid">
-            <div className="psychology-card">
-              <h3>🧠 Emoční regulace</h3>
-              <p>
-                Denní reflexe posiluje vaši schopnost rozpoznat a regulovat emoce.
-                Výzkumy ukazují, že rodiče praktikující mindfulness mají o 23%
-                lepší emoční stabilitu a jejich děti vykazují méně problémového chování.
-              </p>
-              <div className="quote">
-                "Když rodiče lépe regulují své emoce, vytváří bezpečnější prostředí pro emoční vývoj dětí."
+            {/* Card 1: Emoční regulace */}
+            <article className="psychology-card psychology-card--emotions">
+              <div className="photo-header"></div>
+              <div className="grain"></div>
+              <div className="content">
+                <div className="eyebrow" style={{color: '#F8C8A6'}}>
+                  <span className="dot"></span>
+                  Emoční regulace
+                </div>
+                <h3>Když se potkáme očima, emoce se ztiší</h3>
+                <p>
+                  Denní reflexe posiluje vaši schopnost rozpoznat a regulovat pocity.
+                  Děti pak rychleji přebírají klid a jistotu od vás.
+                </p>
+                <div className="quote">
+                  "Když rodiče lépe regulují své emoce, vytváří bezpečnější prostor pro emoční vývoj dětí."
+                </div>
               </div>
-            </div>
+            </article>
 
-            <div className="psychology-card">
-              <h3>🎯 Vědomé rodičovství</h3>
-              <p>
-                Pravidelná reflexe vás učí být přítomní v momentech s dětmi.
-                Studie prokázaly, že mindful parenting snižuje rodičovský stres
-                o 30% a zlepšuje kvalitu vztahu mezi rodiči a dětmi.
-              </p>
-              <div className="quote">
-                "Přítomnost je největší dar, který můžete svému dítěti dát."
+            {/* Card 2: Vědomé rodičovství */}
+            <article className="psychology-card psychology-card--presence">
+              <div className="photo-side"></div>
+              <div className="content">
+                <div className="eyebrow" style={{color: '#83C5BE'}}>
+                  <span className="dot"></span>
+                  Vědomé rodičovství
+                </div>
+                <h3>Přítomnost je největší dar, který můžete dát</h3>
+                <p>
+                  Pravidelná reflexe vás učí být v momentu s dětmi.
+                  Snižuje rodičovský stres a zlepšuje kvalitu vztahu i každodenní pohody.
+                </p>
+                <div className="quote">
+                  "Minuta opravdové pozornosti má větší hodnotu než hodina na autopilota."
+                </div>
               </div>
-            </div>
+            </article>
 
-            <div className="psychology-card">
-              <h3>📈 Pozitivní vzorce</h3>
-              <p>
-                Sledování denních úspěchů pomáhá budovat pozitivní návyky.
-                Neuroplasticita mozku umožňuje vytvářet nové neuronové dráhy,
-                které podporují trpělivost, empatii a radost z rodičovství.
-              </p>
-              <div className="quote">
-                "Co sledujeme, to roste. Zaměření na pozitivní momenty je mění na návyk."
+            {/* Card 3: Pozitivní vzorce */}
+            <article className="psychology-card psychology-card--habits">
+              <div className="polaroid">
+                <div className="photo"></div>
               </div>
-            </div>
+              <div className="grain"></div>
+              <div className="content">
+                <div className="eyebrow" style={{color: '#F6D08B'}}>
+                  <span className="dot"></span>
+                  Pozitivní vzorce
+                </div>
+                <h3>Co sledujeme, to roste</h3>
+                <p>
+                  Zachytávání drobných úspěchů pomáhá budovat návyky radosti, trpělivosti a sounáležitosti.
+                  Neuroplasticita pracuje s vámi.
+                </p>
+                <div className="quote">
+                  "Zaměření na pozitivní momenty mění návyk – a mění i dětství."
+                </div>
+              </div>
+            </article>
           </div>
 
           <div style={{textAlign: 'center', marginTop: '3rem'}}>
