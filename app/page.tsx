@@ -38,7 +38,7 @@ export default function Home() {
           <h1>Každý den je příležitost být lepším rodičem</h1>
           <p className="description">
             Mindful parenting s denní reflexí. Sledujte své momenty,
-            získejte personalizované tipy a budujte hlubší vztah se svými dětmi.
+            získejte personalizované tipy a budujte hlubší vztah se svými dětmi. Aplikace od rodičů pro rodiče.
           </p>
 
           <div className="preview">
