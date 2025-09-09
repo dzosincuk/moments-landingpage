@@ -61,6 +61,30 @@ export default function Home() {
           <Link href="#psychology" className="cta-button orange">
             ✨ Začít reflektovat
           </Link>
+
+	          {/* Download buttons (top) */}
+	          <div className="download-buttons" style={{ marginTop: '16px' }}>
+	            <a
+	              href="https://play.google.com/store/apps/details?id=com.zosiii.moments"
+	              className="download-button"
+	              target="_blank"
+	              rel="noopener noreferrer"
+	            >
+	              <span className="icon">📱</span>
+	              <div className="text">
+	                <span className="small">Stáhnout z</span>
+	                <span className="large">Google Play</span>
+	              </div>
+	            </a>
+	            <div className="download-button disabled">
+	              <span className="icon">🍎</span>
+	              <div className="text">
+	                <span className="small">App Store</span>
+	                <span className="large">Listopad 2025</span>
+	              </div>
+	            </div>
+	          </div>
+
         </div>
       </section>
 
@@ -317,7 +341,7 @@ export default function Home() {
           </p>
           <div className="download-buttons">
             <a
-              href="https://play.google.com/store/apps/details?id=cz.momnts.app"
+              href="https://play.google.com/store/apps/details?id=com.zosiii.moments"
               className="download-button"
               target="_blank"
               rel="noopener noreferrer"
