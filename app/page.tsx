@@ -37,8 +37,8 @@ export default function Home() {
 
           <h1>Každý den je příležitost být lepším rodičem</h1>
           <p className="description">
-            Mindful parenting s denní reflexí. Sledujte své momenty,
-            získejte personalizované tipy a budujte hlubší vztah se svými dětmi. Aplikace od rodičů pro rodiče.
+            Mindful parenting s denní reflexí. Zapisujte si své momenty,
+            získejte personalizované tipy a budujte hlubší vztah se svými dětmi. Aplikace od rodičů pro rodiče od zakladatelů Jako Dřív.cz
           </p>
 
           <div className="preview">
@@ -53,8 +53,8 @@ export default function Home() {
 
             <div className="idea-card">
               <div className="idea-heading">💡 Nápad na dnešek</div>
-              <div className="idea-title">Kreativní tvoření s dětmi doma</div>
-              <p>Vytvořte spolu něco jednoduchého z toho, co máte doma</p>
+              <div className="idea-title">Děti kolem 4 let často touží po pozornosti, kterou jinak dostává mladší sourozenec.</div>
+              <p>Zkuste dát staršímu dítěti malou a jasnou roli – například ať vybere pyžamko pro dvouletého, nebo mu před spaním zazpívá krátkou písničku. 👉 Psychologicky to funguje tak, že starší dítě cítí důležitost a uznání, místo aby soupeřilo o vaši pozornost. A mladší zase vnímá, že sourozenec je zdrojem péče a blízkosti, ne konkurencí.</p>
             </div>
           </div>
 
@@ -212,7 +212,7 @@ export default function Home() {
       {/* Features Section */}
       <section id="features" className="section">
         <div className="container">
-          <h2>Jak Momnts funguje</h2>
+          <h2>Jak aplikace Momnts funguje</h2>
           <p className="subtitle">
             Jednoduchý nástroj pro každodenní růst ve vašem rodičovství
           </p>
@@ -221,7 +221,7 @@ export default function Home() {
               <span className="feature-icon">🎤</span>
               <h3>Hlasové nebo textové reflexe</h3>
               <p>
-                Každý večer si rychle nahrajte nebo napište, jak se vám dařilo být trpělivým rodičem.
+                V průběhu dne si rychle nahrajte nebo napište, jak se vám dařilo být trpělivým rodičem a jaké situace jste s dětmi zažili.
                 Hlasové poznámky se automaticky přepíší na text - není potřeba diktovat, každý to má rád jinak.
               </p>
             </div>
@@ -229,7 +229,7 @@ export default function Home() {
               <span className="feature-icon">🌅</span>
               <h3>Ranní inspirace</h3>
               <p>
-                Každé ráno dostanete personalizovanou kartu s tipy založenými na vašich reflexích.
+                Každé ráno dostanete 2 personalizované kartu s tipy založenými na vašich reflexích. Denní tip, co byste mohli zkusit s dětmi a také zpětnou vazbu na vaší včerejší poznámku.
                 AI analyzuje vaše vzorce a navrhuje konkrétní strategie pro lepší den.
               </p>
             </div>
@@ -237,8 +237,8 @@ export default function Home() {
               <span className="feature-icon">📊</span>
               <h3>Sledování pokroku</h3>
               <p>
-                Jednoduché hodnocení "ano", "možná", "ne" vám ukáže trendy ve vašem rodičovství.
-                Vidíte, co funguje a kde máte prostor pro růst.
+                Evidujte si jednoduché hodnocení "ano", "možná", "ne", které vám ukáže trendy ve vašem rodičovství. Když se nedaří, víte že to musíte zlomit a aplikace poradí jak. Když to jde dobře, vídíte to černé na bílém a můžete si to užívat.
+                Díky MOMNTS vidíte, co funguje a kde máte prostor pro růst.
               </p>
             </div>
           </div>
@@ -256,7 +256,7 @@ export default function Home() {
         <div className="container">
           <h2>Pro rodiče, kteří chtějí růst</h2>
           <p className="subtitle">
-            Momnts není jen aplikace - je to váš denní společník na cestě k lepšímu rodičovství
+            Momnts není jen aplikace - je to váš denní společník na cestě k lepšímu rodičovství. Od rodičů pro rodiče.
           </p>
 
           <div className="features-grid">
