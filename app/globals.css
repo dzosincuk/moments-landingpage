@@ -596,59 +596,20 @@ body {
 .download-button {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  background: #000;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 12px;
+  justify-content: center;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
   transition: all 0.2s ease;
-  border: 1px solid #333;
-  min-width: 160px;
 }
 
 .download-button:hover {
-  background: #333;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  color: white;
+  transform: translateY(-2px);
+  filter: brightness(1.1);
   text-decoration: none;
 }
 
-.download-button.disabled {
-  background: #666;
-  color: #ccc;
-  cursor: not-allowed;
-  border-color: #666;
-}
-
-.download-button.disabled:hover {
-  background: #666;
-  transform: none;
-  box-shadow: none;
-}
-
-.download-button .icon {
-  font-size: 24px;
-}
-
-.download-button .text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.download-button .text .small {
-  font-size: 10px;
-  opacity: 0.8;
-  font-weight: 400;
-}
-
-.download-button .text .large {
-  font-size: 16px;
-  font-weight: 600;
+.download-button img {
+  height: 40px;
+  width: auto;
 }
 
 .privacy-section {

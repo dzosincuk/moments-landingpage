@@ -70,19 +70,16 @@ export default function Home() {
 	              target="_blank"
 	              rel="noopener noreferrer"
 	            >
-	              <span className="icon">📱</span>
-	              <div className="text">
-	                <span className="small">Stáhnout z</span>
-	                <span className="large">Google Play</span>
-	              </div>
+	              <img src="/google-play-badge.svg" alt="Stáhnout z Google Play" style={{ height: '40px' }} />
 	            </a>
-	            <div className="download-button disabled">
-	              <span className="icon">🍎</span>
-	              <div className="text">
-	                <span className="small">App Store</span>
-	                <span className="large">Listopad 2025</span>
-	              </div>
-	            </div>
+	            <a
+	              href="https://apps.apple.com/cz/app/momnts/id6752495827"
+	              className="download-button"
+	              target="_blank"
+	              rel="noopener noreferrer"
+	            >
+	              <img src="/app-store-badge.svg" alt="Stáhnout z App Store" style={{ height: '40px' }} />
+	            </a>
 	          </div>
 
         </div>
@@ -346,19 +343,16 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="icon">📱</span>
-              <div className="text">
-                <span className="small">Stáhnout z</span>
-                <span className="large">Google Play</span>
-              </div>
+              <img src="/google-play-badge.svg" alt="Stáhnout z Google Play" style={{ height: '40px' }} />
             </a>
-            <div className="download-button disabled">
-              <span className="icon">🍎</span>
-              <div className="text">
-                <span className="small">App Store</span>
-                <span className="large">Listopad 2025</span>
-              </div>
-            </div>
+            <a
+              href="https://apps.apple.com/cz/app/momnts/id6752495827"
+              className="download-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/app-store-badge.svg" alt="Stáhnout z App Store" style={{ height: '40px' }} />
+            </a>
           </div>
         </div>
       </section>
