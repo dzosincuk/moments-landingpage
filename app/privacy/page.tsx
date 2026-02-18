@@ -3,55 +3,35 @@ import Image from 'next/image'
 
 export default function Privacy() {
   return (
-    <div style={{minHeight: '100vh', padding: '2rem 0'}}>
-      <div className="container">
-        {/* Header with logo and back link */}
-        <div style={{textAlign: 'center', marginBottom: '3rem'}}>
-          <Link href="/" style={{display: 'inline-block', marginBottom: '1rem'}}>
-            <Image
-              src="/logo.png"
-              alt="MOMNTS Logo"
-              width={60}
-              height={60}
-              style={{borderRadius: '15px'}}
-            />
+    <div className="privacy-page">
+      {/* Dark hero header */}
+      <div className="privacy-hero">
+        <div className="container">
+          <Link href="/" className="privacy-back">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style={{marginRight:'8px',verticalAlign:'-3px'}}><path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            Zpět na hlavní stránku
           </Link>
-          <div style={{marginBottom: '1rem'}}>
-            <Link
-              href="/"
-              style={{
-                color: 'var(--md-sys-color-primary)',
-                textDecoration: 'none',
-                fontSize: '1rem',
-                fontWeight: '500'
-              }}
-            >
-              ← Zpět na hlavní stránku
-            </Link>
+          <div style={{display:'flex',alignItems:'center',justifyContent:'center',gap:'16px',marginBottom:'24px'}}>
+            <Image src="/logo.png" alt="MOMNTS" width={48} height={48} style={{borderRadius:'12px'}} />
+            <span style={{fontSize:'20px',fontWeight:700,letterSpacing:'-0.02em'}}>MOMNTS</span>
           </div>
+          <h1>Zásady ochrany soukromí</h1>
+          <p>Tyto zásady popisují, jak aplikace Momnts shromažďuje, používá a&nbsp;chrání vaše osobní údaje.</p>
         </div>
+      </div>
 
+      <div className="container">
         <div className="privacy-content">
-          <h1 style={{fontSize: '2.5rem', marginBottom: '2rem', textAlign: 'center'}}>
-            Zásady ochrany soukromí
-          </h1>
-
-          <p style={{marginBottom: '2rem', fontSize: '1.1rem'}}>
-            Tyto zásady ochrany soukromí popisují, jak aplikace Momnts shromažďuje,
-            používá a chrání vaše osobní údaje.
-          </p>
 
           <h2>1. Správce údajů</h2>
-          <p>
-            Správcem vašich osobních údajů je:
-          </p>
-          <p>
+          <p>Správcem vašich osobních údajů je:</p>
+          <div className="privacy-info-box">
             <strong>Dominik Zosinčuk</strong><br/>
             Na žlábku 456<br/>
             Světice, 251 01<br/>
             DIČ: CZ8904062409<br/>
-            Email: aplikace@momnts.cz
-          </p>
+            Email: <a href="mailto:momnts@zosiii.com">momnts@zosiii.com</a>
+          </div>
 
           <h2>2. Shromažďované údaje</h2>
           <h3>2.1 Hlasové nahrávky</h3>
@@ -64,7 +44,7 @@ export default function Privacy() {
           <h3>2.2 Textové poznámky a hodnocení</h3>
           <p>Aplikace ukládá:</p>
           <ul>
-            <li><strong>Denní reflexe:</strong> Vaše odpovědi "ano", "možná", "ne" na denní otázky</li>
+            <li><strong>Denní reflexe:</strong> Vaše odpovědi &ldquo;ano&rdquo;, &ldquo;možná&rdquo;, &ldquo;ne&rdquo; na denní otázky</li>
             <li><strong>Textové poznámky:</strong> Přepsané texty z hlasových nahrávek</li>
             <li><strong>Informace o dětech:</strong> Věk a základní údaje pro personalizaci obsahu</li>
           </ul>
@@ -95,19 +75,15 @@ export default function Privacy() {
           </ul>
 
           <h2>4. Sdílení údajů</h2>
-          <p>
-            Vaše osobní údaje nesdílíme s třetími stranami, kromě případů:
-          </p>
+          <p>Vaše osobní údaje nesdílíme s&nbsp;třetími stranami, kromě případů:</p>
           <ul>
             <li>Kdy je to vyžadováno zákonem</li>
             <li>Pro technické poskytování služby (hosting, cloudové služby)</li>
-            <li>S vaším výslovným souhlasem</li>
+            <li>S&nbsp;vaším výslovným souhlasem</li>
           </ul>
 
           <h2>5. Doba uchovávání</h2>
-          <p>
-            Vaše údaje uchováváme po dobu:
-          </p>
+          <p>Vaše údaje uchováváme po dobu:</p>
           <ul>
             <li>Textové poznámky a reflexe: dokud je neodstraníte nebo nezrušíte účet</li>
             <li>Údaje o účtu: dokud nezrušíte účet</li>
@@ -128,9 +104,9 @@ export default function Privacy() {
 
           <h2>7. Zabezpečení</h2>
           <p>
-            Používáme moderní bezpečnostní opatření včetně šifrování dat 
-            při přenosu i ukládání, pravidelných bezpečnostních auditů 
-            a omezení přístupu pouze na oprávněné osoby.
+            Používáme moderní bezpečnostní opatření včetně šifrování dat
+            při přenosu i&nbsp;ukládání, pravidelných bezpečnostních auditů
+            a&nbsp;omezení přístupu pouze na oprávněné osoby.
           </p>
 
           <h2>8. Oprávnění aplikace</h2>
@@ -138,69 +114,62 @@ export default function Privacy() {
           <p>
             Vyžadováno pro nahrávání hlasových poznámek. Aplikace nahrává
             pouze když explicitně stisknete tlačítko nahrávání. Nahrávky
-            jsou okamžitě přepsány na text a poté smazány - neukládají se.
+            jsou okamžitě přepsány na text a&nbsp;poté smazány – neukládají se.
           </p>
 
           <h3>8.2 Notifikace</h3>
           <p>
-            Používáno pro odesílání denních připomínek a motivačních zpráv.
-            Můžete je kdykoli vypnout v nastavení aplikace.
+            Používáno pro odesílání denních připomínek a&nbsp;motivačních zpráv.
+            Můžete je kdykoli vypnout v&nbsp;nastavení aplikace.
           </p>
 
           <h3>8.3 Úložiště</h3>
           <p>
             Používáno pro dočasné ukládání dat před jejich odesláním
-            na server a pro cache aplikace.
+            na server a&nbsp;pro cache aplikace.
           </p>
 
           <h3>8.4 Síťový přístup</h3>
           <p>
-            Potřebný pro synchronizaci dat, přepis hlasu na text a stahování
+            Potřebný pro synchronizaci dat, přepis hlasu na text a&nbsp;stahování
             personalizovaných karet.
           </p>
 
           <h2>9. Cookies a sledování</h2>
           <p>
-            Webová stránka používá pouze nezbytné cookies pro fungování. 
-            Mobilní aplikace nepoužívá cookies ani sledovací technologie 
+            Webová stránka používá pouze nezbytné cookies pro fungování.
+            Mobilní aplikace nepoužívá cookies ani sledovací technologie
             třetích stran.
           </p>
 
           <h2>10. Změny zásad</h2>
           <p>
-            O změnách těchto zásad vás budeme informovat prostřednictvím 
-            aplikace nebo emailu. Pokračování v používání aplikace po 
-            změnách znamená souhlas s novými zásadami.
+            O&nbsp;změnách těchto zásad vás budeme informovat prostřednictvím
+            aplikace nebo emailu. Pokračování v&nbsp;používání aplikace po
+            změnách znamená souhlas s&nbsp;novými zásadami.
           </p>
 
           <h2>11. Kontakt</h2>
-          <p>
-            Pro otázky ohledně ochrany soukromí nás kontaktujte:
-          </p>
-          <p>
+          <p>Pro otázky ohledně ochrany soukromí nás kontaktujte:</p>
+          <div className="privacy-info-box">
             <strong>Dominik Zosinčuk</strong><br/>
             Na žlábku 456, Světice, 251 01<br/>
-            Email: aplikace@momnts.cz<br/>
-            Pro urgentní záležitosti: aplikace@momnts.cz
-          </p>
+            Email: <a href="mailto:momnts@zosiii.com">momnts@zosiii.com</a><br/>
+            Pro urgentní záležitosti: <a href="mailto:momnts@zosiii.com">momnts@zosiii.com</a>
+          </div>
 
-          <p style={{marginTop: '3rem', padding: '1rem', background: '#f8f9fa', borderRadius: '5px'}}>
+          <div className="privacy-meta">
             <strong>Datum účinnosti:</strong> {new Date().toLocaleDateString('cs-CZ')}<br/>
             <strong>Verze:</strong> 1.0
-          </p>
+          </div>
 
-          {/* Footer with back link */}
-          <div style={{textAlign: 'center', marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid #e0e0e0'}}>
-            <Link
-              href="/"
-              className="cta-button"
-              style={{display: 'inline-flex'}}
-            >
-              ← Zpět na hlavní stránku
+          {/* Footer */}
+          <div className="privacy-footer">
+            <Link href="/" className="cta-button orange">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style={{display:'inline',verticalAlign:'-3px',marginRight:'6px'}}><path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              Zpět na hlavní stránku
             </Link>
-            <p style={{marginTop: '1rem', color: '#666', fontSize: '0.9rem'}}>
-              &copy; 2024 Momnts. Všechna práva vyhrazena.
-            </p>
+            <p>&copy; 2025 Momnts. Všechna práva vyhrazena.</p>
           </div>
         </div>
       </div>
