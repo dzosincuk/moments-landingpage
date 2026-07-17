@@ -70,46 +70,92 @@ export default function Home() {
       <main>
         <section className="hero">
           <div className="paper-noise" aria-hidden="true" />
+          <div className="hero-aurora" aria-hidden="true" />
           <div className="container hero-grid">
             <div className="hero-copy">
-              <p className="eyebrow hero-eyebrow">Klidný denní rytmus pro rodiče</p>
-              <h1>Každý den jeden jasný krok <em>blíž k&nbsp;dětem.</em></h1>
+              <p className="eyebrow hero-eyebrow">Jedna otázka každý večer</p>
+              <h1>Byli jste dnes <em>spolu<span className="mobile-break"><br /></span> doopravdy?</em></h1>
               <p className="hero-lead">
-                Večer zachytíte, co se opravdu stalo. MOMNTS propojí vaše odpovědi a poznámky
-                a ráno nabídne konkrétní doporučení pro vaši rodinu.
+                Zachyťte pár vět ze skutečného dne. Ráno dostanete jednu konkrétní zpětnou vazbu,
+                která naváže právě na vás.
               </p>
               <StoreButtons />
-              <p className="hero-note"><span /> Denní reflexe zůstává zdarma. Stačí dvě minuty.</p>
+              <p className="hero-note"><span /> Dnešní reflexe a jedna aktuální karta jsou zdarma.</p>
             </div>
 
             <div className="hero-visual" aria-label="Ukázka aplikace MOMNTS">
               <div className="halo halo--one" aria-hidden="true" />
               <div className="halo halo--two" aria-hidden="true" />
-              <Image className="hero-illustration" src="/illustration-teddy.png" alt="" width={1280} height={1280} priority />
-              <div className="phone-shell">
+              <div className="halo halo--three" aria-hidden="true" />
+              <div className="hero-question" aria-hidden="true">
+                <span>Dnešní moment</span>
+                <strong>Všimnout si.<br />Zachytit.<br />Navázat.</strong>
+              </div>
+              <div className="phone-shell phone-shell--main">
                 <div className="phone-speaker" />
                 <div className="phone-screen">
-                  <Image src="/app-home.png" alt="Domovská obrazovka aplikace MOMNTS" width={850} height={2560} priority />
+                  <Image src="/ui-home.png" alt="Domovská obrazovka aplikace MOMNTS" width={1080} height={2400} priority />
                 </div>
               </div>
-              <div className="floating-card floating-card--tip">
-                <span className="floating-label">Dnešní tip</span>
-                <strong>Společná ochutnávka tří chutí</strong>
-                <span>Podle vaší včerejší reflexe</span>
+              <div className="phone-shell phone-shell--second" aria-hidden="true">
+                <div className="phone-screen">
+                  <Image src="/ui-moments.png" alt="" width={1080} height={2400} priority />
+                </div>
               </div>
-              <div className="floating-card floating-card--progress">
-                <span className="progress-ring">75</span>
-                <span><strong>Tento týden</strong><small>3 ze 4 reflexí</small></span>
+              <div className="floating-card floating-card--evening">
+                <span className="floating-index">01</span>
+                <span><strong>Večer</strong><small>Zachytíte den</small></span>
+              </div>
+              <div className="floating-card floating-card--morning">
+                <span className="floating-index">02</span>
+                <span><strong>Ráno</strong><small>Dostanete další krok</small></span>
               </div>
             </div>
           </div>
+          <div className="hero-scroll" aria-hidden="true"><span /> Podívejte se dovnitř</div>
         </section>
 
-        <section className="proof-strip" aria-label="Hlavní výhody">
+        <section className="proof-strip" aria-label="Jak MOMNTS funguje">
           <div className="container proof-grid">
-            <div><strong>2 min</strong><span>krátká večerní reflexe</span></div>
-            <div><strong>1 krok</strong><span>osobní doporučení na den</span></div>
-            <div><strong>iOS + Android</strong><span>stejný klidný zážitek</span></div>
+            <div><strong>Večer</strong><span>odpověď a pár vět</span></div>
+            <div><strong>MOMNTS</strong><span>propojí vaše zápisy</span></div>
+            <div><strong>Ráno</strong><span>jedna konkrétní zpětná vazba</span></div>
+          </div>
+        </section>
+
+        <section className="section ui-showcase">
+          <div className="container">
+            <div className="showcase-heading reveal">
+              <div>
+                <p className="eyebrow">Skutečná aplikace</p>
+                <h2>Klidný prostor.<br />Žádný další rodičovský hluk.</h2>
+              </div>
+              <p>Jednoduchý večerní check-in, osobní karty a přehled, ke kterému se vracíte bez pocitu hodnocení.</p>
+            </div>
+
+            <div className="screen-gallery">
+              <article className="screen-story screen-story--home reveal">
+                <div className="screen-frame">
+                  <Image src="/ui-home.png" alt="Večerní reflexe a týdenní přehled v MOMNTS" width={1080} height={2400} />
+                </div>
+                <span>01 · Zachytit den</span>
+                <h3>Jedna otázka. Tolik prostoru, kolik potřebujete.</h3>
+              </article>
+              <article className="screen-story screen-story--moments reveal reveal-delay-1">
+                <div className="screen-frame">
+                  <Image src="/ui-moments.png" alt="Osobní MOMNTS karty" width={1080} height={2400} />
+                </div>
+                <span>02 · Uvidět souvislosti</span>
+                <h3>Zpětná vazba vychází z toho, co jste opravdu prožili.</h3>
+              </article>
+              <article className="screen-story screen-story--calendar reveal reveal-delay-2">
+                <div className="screen-frame">
+                  <Image src="/ui-calendar.png" alt="Kalendář a přehled reflexí v MOMNTS" width={1080} height={2400} />
+                </div>
+                <span>03 · Vnímat rytmus</span>
+                <h3>Pokrok bez tlaku na dokonalou sérii.</h3>
+              </article>
+            </div>
           </div>
         </section>
 
@@ -191,7 +237,12 @@ export default function Home() {
                   <span>Co zkusit dnes</span>
                   <strong>Dejte dítěti jednu malou roli při přípravě jídla.</strong>
                 </div>
-                <Image src="/illustration-baking.png" alt="Jemná linková ilustrace rodiče a dítěte při pečení" width={1280} height={1280} />
+                <div className="recommendation-continuation" aria-hidden="true">
+                  <span>Pokračování karty</span>
+                  <i />
+                  <i />
+                  <i />
+                </div>
               </article>
             </div>
           </div>
