@@ -10,13 +10,11 @@ const appStoreUrl = 'https://apps.apple.com/cz/app/momnts/id6752495827'
 function StoreButtons({ inverse = false }: { inverse?: boolean }) {
   return (
     <div className={`store-buttons${inverse ? ' store-buttons--inverse' : ''}`}>
-      <a href={googlePlayUrl} className="store-button" target="_blank" rel="noopener noreferrer" aria-label="Stáhnout MOMNTS na Google Play">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924L12.073 11.73.258 22.544C-.088 22.202 0 21.607 0 21.607V1.862S-.087 1.266.258.924zm.515-.47L12.891 6.87 9.827 9.914 1.852.454zm0 23.092 7.975-6.016 3.064 3.044-11.039 2.972z" /></svg>
-        <span><small>Stáhnout na</small><strong>Google Play</strong></span>
+      <a href={googlePlayUrl} className="store-badge-link" target="_blank" rel="noopener noreferrer" aria-label="Stáhnout MOMNTS na Google Play">
+        <Image src="/google-play-badge.svg" alt="Stáhnout na Google Play" width={169} height={50} />
       </a>
-      <a href={appStoreUrl} className="store-button" target="_blank" rel="noopener noreferrer" aria-label="Stáhnout MOMNTS v App Store">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" /></svg>
-        <span><small>Stáhnout v</small><strong>App Store</strong></span>
+      <a href={appStoreUrl} className="store-badge-link" target="_blank" rel="noopener noreferrer" aria-label="Stáhnout MOMNTS v App Store">
+        <Image src="/app-store-badge.svg" alt="Stáhnout v App Store" width={169} height={50} />
       </a>
     </div>
   )
@@ -76,11 +74,15 @@ export default function Home() {
               <p className="eyebrow hero-eyebrow">Jedna otázka každý večer</p>
               <h1>Byli jste dnes <em>spolu<span className="mobile-break"><br /></span> doopravdy?</em></h1>
               <p className="hero-lead">
-                Zachyťte pár vět ze skutečného dne. Ráno dostanete jednu konkrétní zpětnou vazbu,
-                která naváže právě na vás.
+                Večer zachytíte pár vět. Ráno dostanete osobní zpětnou vazbu,
+                která naváže na váš&nbsp;den.
               </p>
               <StoreButtons />
               <p className="hero-note"><span /> Dnešní reflexe a jedna aktuální karta jsou zdarma.</p>
+              <div className="hero-trust">
+                <span>Od autorů <a href="https://jakodriv.cz" target="_blank" rel="noopener noreferrer">Jako Dřív.cz</a></span>
+                <span>Premium <strong>29 Kč / měsíc</strong></span>
+              </div>
             </div>
 
             <div className="hero-visual" aria-label="Ukázka aplikace MOMNTS">
@@ -207,43 +209,44 @@ export default function Home() {
         <section id="premium" className="section premium-section">
           <div className="container premium-grid">
             <div className="premium-copy reveal">
-              <p className="eyebrow">MOMNTS Premium</p>
-              <h2>Ne obecné rady. Doporučení z&nbsp;vašeho skutečného dne.</h2>
+              <p className="eyebrow">Zdarma nebo Premium</p>
+              <h2>Začněte zdarma. Historii si odemknete za&nbsp;29&nbsp;Kč.</h2>
               <p className="premium-lead">
-                Nemusíte zpětně pročítat poznámky ani sami hledat vzorce. MOMNTS udělá souvislosti viditelné
-                a promění je v jeden proveditelný krok.
+                Základní MOMNTS je schválně štědrý. Každý den dostanete užitečný tip i aktuální zpětnou vazbu.
+                Premium přidá historii, takže se ke všem kartám můžete vracet a vnímat souvislosti v čase.
               </p>
               <ul className="benefit-list">
-                <li><CheckIcon /><span><strong>Osobní doporučení každý den</strong>Vytvořené z vašich odpovědí a poznámek.</span></li>
-                <li><CheckIcon /><span><strong>Souvislosti napříč záznamy</strong>Všimnete si opakujících se situací i drobných posunů.</span></li>
-                <li><CheckIcon /><span><strong>Historie a týdenní přehled</strong>Ke kartám se můžete vrátit a sledovat vývoj v čase.</span></li>
+                <li><CheckIcon /><span><strong>Personalizované denní tipy</strong>Co můžete dělat s dětmi podle jejich věku a vašich preferencí.</span></li>
+                <li><CheckIcon /><span><strong>Denní zpětná vazba</strong>Jedna konkrétní karta navázaná na vaše poznámky ze skutečného dne.</span></li>
+                <li><CheckIcon /><span><strong>Historie v Premium</strong>Všechny karty zpětně, jejich hodnocení a poslech jako audio.</span></li>
               </ul>
-              <Link href="#stahnout" className="text-link">Vyzkoušet všechny funkce <span>→</span></Link>
+              <Link href="#stahnout" className="text-link">Začít zdarma <span>→</span></Link>
             </div>
 
-            <div className="recommendation-wrap reveal reveal-delay-1">
-              <div className="recommendation-halo" aria-hidden="true" />
-              <article className="recommendation-card">
-                <div className="recommendation-topline">
-                  <span>Dnešní osobní karta</span>
-                  <span>4 min čtení</span>
-                </div>
-                <h3>Klid, který už doma umíte vytvořit</h3>
-                <p>
-                  Včera jste si všimli, že společné chystání večeře zklidnilo napjatou chvíli.
-                  Dnes na tenhle fungující moment krátce navažte.
-                </p>
-                <div className="recommendation-action">
-                  <span>Co zkusit dnes</span>
-                  <strong>Dejte dítěti jednu malou roli při přípravě jídla.</strong>
-                </div>
-                <div className="recommendation-continuation" aria-hidden="true">
-                  <span>Pokračování karty</span>
-                  <i />
-                  <i />
-                  <i />
-                </div>
-              </article>
+            <div className="pricing-card reveal reveal-delay-1">
+              <div className="pricing-head">
+                <span>MOMNTS Premium</span>
+                <div><strong>29 Kč</strong><small>/ měsíc</small></div>
+                <p>Méně než jedna káva za celou historii vašich MOMNTS karet.</p>
+              </div>
+              <div className="plan plan--free">
+                <div className="plan-title"><span>Zdarma</span><strong>0 Kč</strong></div>
+                <ul>
+                  <li><CheckIcon />Denní reflexe a poznámky</li>
+                  <li><CheckIcon />Tipy podle věku a preferencí</li>
+                  <li><CheckIcon />Jedna aktuální zpětná vazba</li>
+                </ul>
+              </div>
+              <div className="plan plan--premium">
+                <div className="plan-title"><span>Premium</span><strong>29 Kč / měsíc</strong></div>
+                <ul>
+                  <li><CheckIcon />Všechno z verze zdarma</li>
+                  <li><CheckIcon />Historie všech zpětných vazeb</li>
+                  <li><CheckIcon />Hodnocení a audio karet</li>
+                </ul>
+                <Link href="#stahnout" className="pricing-cta">Odemknout celou historii</Link>
+                <div className="pricing-note">Přesnou cenu a podmínky uvidíte před potvrzením v App Store nebo Google Play.</div>
+              </div>
             </div>
           </div>
         </section>
@@ -315,7 +318,6 @@ export default function Home() {
             <Link href="/privacy">Ochrana soukromí</Link>
             <Link href="/delete-account">Smazat účet</Link>
             <a href="mailto:momnts@zosiii.com">Kontakt</a>
-            <a href="https://www.z3.studio" target="_blank" rel="noopener noreferrer">Z3.studio</a>
           </div>
           <p className="copyright">© 2026 MOMNTS. Všechna práva vyhrazena.</p>
         </div>
