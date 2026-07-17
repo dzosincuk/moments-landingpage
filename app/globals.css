@@ -693,24 +693,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .hero-note { font-size: 10px; }
   .hero-trust { flex-direction: column; gap: 8px; font-size: 10px; }
   .hero-trust span + span { padding-left: 0; border-left: 0; }
-  .hero-visual { min-height: 580px; margin-inline: -10px; }
-  .halo--one { width: 470px; height: 470px; }
-  .halo--two { width: 430px; height: 510px; }
-  .halo--three { width: 510px; height: 420px; }
+  .hero-visual { width: 100%; min-height: 540px; margin-inline: 0; }
+  .halo--one { width: 390px; height: 470px; }
+  .halo--two { width: 360px; height: 490px; }
+  .halo--three { width: 420px; height: 390px; }
   .phone-shell { width: 248px; height: 500px; border-radius: 42px; }
-  .phone-shell--main { margin: 24px 0 0 38px; }
-  .phone-shell--second { right: -34px; bottom: 5px; width: 160px; height: 348px; padding: 6px; border-radius: 28px; }
-  .phone-shell--second .phone-screen { border-radius: 22px; }
+  .phone-shell--main { margin: 18px 0 0; transform: rotate(-1.4deg); }
+  .phone-shell--second, .hero-question, .floating-card { display: none; }
   .phone-screen { border-radius: 34px; }
   .phone-speaker { top: 14px; width: 70px; height: 19px; }
-  .hero-question { top: 0; left: 0; width: 178px; padding-block: 19px; }
-  .hero-question strong { font-size: 21px; }
-  .floating-card--evening { left: 0; bottom: 54px; }
-  .floating-card--morning { top: 96px; right: -4px; }
-  .floating-card--evening, .floating-card--morning { gap: 8px; padding: 9px 11px 9px 9px; }
-  .floating-index { width: 28px; height: 28px; font-size: 11px; }
-  .floating-card strong { font-size: 9px; }
-  .floating-card small { font-size: 7px; }
   .hero-scroll { display: none; }
   .proof-grid { grid-template-columns: 1fr; }
   .proof-grid > div { min-height: 94px; border-right: 0; border-bottom: 1px solid var(--line); text-align: center; }
@@ -726,8 +717,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .screen-frame { width: min(86%, 350px); margin-inline: auto; aspect-ratio: 9 / 14.7; }
   .screen-story > span, .screen-story h3 { display: block; width: min(86%, 350px); margin-inline: auto; }
   .screen-story h3 { margin-top: 9px; font-size: 24px; }
-  .step { grid-template-columns: 36px 1fr; gap: 14px; }
+  .step { grid-template-columns: 1fr; gap: 0; padding-block: 36px; }
+  .step-number { margin-bottom: 11px; padding-top: 0; font-family: var(--sans); font-size: 11px; font-weight: 800; letter-spacing: .18em; }
+  .step-copy { grid-column: 1; }
   .step-copy h3 { font-size: 28px; }
+  .mini-reflection, .mini-tip, .step-illustration { grid-column: 1; margin-top: 24px; }
   .mini-reflection { padding: 20px 13px; }
   .mini-reflection > span { font-size: 18px; }
   .mini-reflection b { font-size: 9px; }

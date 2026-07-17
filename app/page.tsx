@@ -74,8 +74,8 @@ export default function Home() {
               <p className="eyebrow hero-eyebrow">Jedna otázka každý večer</p>
               <h1>Byli jste dnes <em>spolu<span className="mobile-break"><br /></span> doopravdy?</em></h1>
               <p className="hero-lead">
-                Večer zachytíte pár vět. Ráno dostanete osobní zpětnou vazbu,
-                která naváže na váš&nbsp;den.
+                Nejde jen být spolu. Hluboký čas je chvíle s plnou pozorností.
+                Večer ji zachytíte, ráno na ni naváže osobní zpětná vazba.
               </p>
               <StoreButtons />
               <p className="hero-note"><span /> Dnešní reflexe a jedna aktuální karta jsou zdarma.</p>
@@ -174,11 +174,11 @@ export default function Home() {
                 <span className="step-number">01</span>
                 <div className="step-copy">
                   <h3>Zastavíte se</h3>
-                  <p>Jednou otázkou zhodnotíte den a krátce si zapíšete, co chcete uchovat.</p>
+                  <p>Zachytíte, jestli jste spolu měli hluboký čas — chvíli s plnou pozorností.</p>
                 </div>
                 <div className="mini-reflection" aria-hidden="true">
                   <span>Byli jste dnes spolu doopravdy?</span>
-                  <div><b>✓ Ano</b><b>– Skoro</b><b>× Ne</b></div>
+                  <div><b>✓ Ano</b><b>– Možná</b><b>× Ne</b></div>
                 </div>
               </article>
 
