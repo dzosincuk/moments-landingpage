@@ -1,24 +1,38 @@
 import type { Metadata } from 'next'
+import { Manrope, Newsreader } from 'next/font/google'
 import './globals.css'
 
+const manrope = Manrope({
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-manrope',
+  display: 'swap',
+})
+
+const newsreader = Newsreader({
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-newsreader',
+  display: 'swap',
+  adjustFontFallback: false,
+})
+
 export const metadata: Metadata = {
-  title: 'MOMNTS – Každý den lepší rodič | Mindful Parenting',
-  description: 'Mindful parenting s denní reflexí. Zapisujte si své momenty, získejte AI tipy a budujte hlubší vztah se svými dětmi. Aplikace od rodičů pro rodiče.',
+  title: 'MOMNTS – Každý den jeden jasný krok blíž k dětem',
+  description: 'Dvě minuty večerní reflexe a každý den jedno osobní doporučení pro vaši rodinu. MOMNTS propojí vaše poznámky a ukáže, co konkrétně zkusit dál.',
   keywords: 'momnts, mindful parenting, reflexe, rodičovství, android, ios, výchova dětí, rodinná aplikace',
   authors: [{ name: 'MOMNTS' }],
-  metadataBase: new URL('https://momnts.zosiii.com'),
+  metadataBase: new URL('https://momnts.cz'),
   openGraph: {
-    title: 'MOMNTS – Každý den lepší rodič',
-    description: 'Mindful parenting s denní reflexí. Víc přítomnosti, méně stresu. Aplikace od rodičů pro rodiče.',
-    url: 'https://momnts.zosiii.com',
+    title: 'MOMNTS – Každý den jeden jasný krok blíž k dětem',
+    description: 'Dvě minuty večerní reflexe. Jedno osobní doporučení pro vaši rodinu.',
+    url: 'https://momnts.cz',
     siteName: 'MOMNTS',
     locale: 'cs_CZ',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MOMNTS – Každý den lepší rodič',
-    description: 'Mindful parenting s denní reflexí. Víc přítomnosti, méně stresu.',
+    title: 'MOMNTS – Každý den jeden jasný krok blíž k dětem',
+    description: 'Dvě minuty večerní reflexe. Jedno osobní doporučení pro vaši rodinu.',
   },
   icons: {
     icon: [
@@ -40,15 +54,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="cs">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="cs" className={`${manrope.variable} ${newsreader.variable}`}>
       <body>{children}</body>
     </html>
   )
