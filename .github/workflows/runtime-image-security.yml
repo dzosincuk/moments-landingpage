@@ -1,0 +1,49 @@
+name: Runtime image security
+
+on:
+  push:
+    branches: [main, master, coolify-deployment]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: runtime-image-security-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Build production image
+        run: docker build --tag runtime-image:ci .
+
+      - name: Verify minimized Node runtime
+        run: |
+          docker run --rm --entrypoint sh runtime-image:ci -ec '
+            node --version >/dev/null
+            ! command -v npm >/dev/null
+            test ! -d /usr/local/lib/node_modules/npm
+          '
+
+      - name: Enforce zero HIGH and CRITICAL vulnerabilities
+        run: |
+          set -Eeuo pipefail
+          docker run --rm \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            aquasec/trivy:0.72.0@sha256:cffe3f5161a47a6823fbd23d985795b3ed72a4c806da4c4df16266c02accdd6f \
+            image --quiet --scanners vuln --severity HIGH,CRITICAL \
+            --format json runtime-image:ci > trivy.json
+          critical=$(jq '[.Results[]?.Vulnerabilities[]? | select(.Severity == "CRITICAL")] | length' trivy.json)
+          high=$(jq '[.Results[]?.Vulnerabilities[]? | select(.Severity == "HIGH")] | length' trivy.json)
+          printf 'Trivy: %s CRITICAL, %s HIGH\n' "$critical" "$high" | tee -a "$GITHUB_STEP_SUMMARY"
+          if (( critical != 0 || high != 0 )); then
+            echo 'Production image must remain free of HIGH and CRITICAL vulnerabilities.' >&2
+            exit 1
+          fi
+
