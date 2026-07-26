@@ -7,6 +7,8 @@ updates:
       day: "monday"
       time: "04:00"
       timezone: "Europe/Prague"
+    cooldown:
+      default-days: 7
     open-pull-requests-limit: 5
     groups:
       routine-npm:
@@ -27,6 +29,8 @@ updates:
       day: "monday"
       time: "04:15"
       timezone: "Europe/Prague"
+    cooldown:
+      default-days: 7
     open-pull-requests-limit: 3
     groups:
       routine-docker:
@@ -47,6 +51,8 @@ updates:
       day: "monday"
       time: "04:30"
       timezone: "Europe/Prague"
+    cooldown:
+      default-days: 7
     open-pull-requests-limit: 3
     groups:
       routine-actions:

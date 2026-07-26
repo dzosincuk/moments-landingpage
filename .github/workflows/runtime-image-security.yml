@@ -20,6 +20,14 @@ jobs:
       - name: Check out source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
+      - name: Set up isolated dependency verification
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+
+      - name: Verify npm signatures and lifecycle-script allowlist
+        run: ./.github/scripts/verify-npm-dependencies.sh
+
       - name: Build production image
         run: docker build --tag runtime-image:ci .
 
@@ -30,6 +38,22 @@ jobs:
             ! command -v npm >/dev/null
             test ! -d /usr/local/lib/node_modules/npm
           '
+
+      - name: Generate CycloneDX SBOM
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          image-ref: runtime-image:ci
+          format: cyclonedx
+          output: sbom.cdx.json
+          exit-code: "0"
+
+      - name: Upload CycloneDX SBOM
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: sbom-moments-landingpage-${{ github.sha }}
+          path: sbom*.cdx.json
+          if-no-files-found: error
+          retention-days: 30
 
       - name: Enforce zero HIGH and CRITICAL vulnerabilities
         run: |
