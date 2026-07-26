@@ -4,6 +4,8 @@ on:
   push:
     branches: [main, master, coolify-deployment]
   pull_request:
+  schedule:
+    - cron: "13 3 * * 1"
 
 permissions:
   contents: read
@@ -19,6 +21,18 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Scan source dependencies for fixable vulnerabilities
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          version: v0.72.0
+          scan-type: fs
+          scan-ref: .
+          skip-dirs: node_modules,build,.gradle,androidApp/build
+          scanners: vuln
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          exit-code: "1"
 
       - name: Set up isolated dependency verification
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
@@ -39,9 +53,15 @@ jobs:
             test ! -d /usr/local/lib/node_modules/npm
           '
 
+      - name: Smoke-test Sharp runtime
+        run: >-
+          docker run --rm --entrypoint node runtime-image:ci
+          -e 'const sharp=require("sharp");sharp({create:{width:1,height:1,channels:4,background:{r:0,g:0,b:0,alpha:1}}}).png().toBuffer().then(b=>{if(!b.length)process.exit(1)}).catch(e=>{console.error(e);process.exit(1)})'
+
       - name: Generate CycloneDX SBOM
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
         with:
+          version: v0.72.0
           image-ref: runtime-image:ci
           format: cyclonedx
           output: sbom.cdx.json
