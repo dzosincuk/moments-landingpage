@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "exceptions": [
+    {
+      "advisory": "GHSA-mh99-v99m-4gvg",
+      "package": "brace-expansion",
+      "scope": "dev",
+      "reason": "Reachable only from fixed-input lint/build tooling; application code has no brace-expansion, minimatch, or glob import.",
+      "expires": "2026-08-23"
+    }
+  ]
+}
