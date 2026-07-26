@@ -38,7 +38,9 @@ while IFS= read -r -d '' lockfile; do
   lockfiles+=("$lockfile")
 done < <(
   find "$repo_root" -name package-lock.json \
-    -not -path '*/node_modules/*' -not -path '*/.git/*' -print0
+    -not -path '*/node_modules/*' -not -path '*/.git/*' \
+    -not -path '*/.next/*' -not -path '*/dist/*' -not -path '*/build/*' \
+    -not -path '*/coverage/*' -not -path '*/out/*' -print0
 )
 
 if (( ${#lockfiles[@]} == 0 )); then
@@ -61,6 +63,8 @@ for lock in "${lockfiles[@]}"; do
   )
   write_actual "$lock" "$relative_dir"
 done
+
+node "$repo_root/.github/scripts/verify-npm-audit.mjs" "$repo_root"
 
 sort -u -o "$actual" "$actual"
 
