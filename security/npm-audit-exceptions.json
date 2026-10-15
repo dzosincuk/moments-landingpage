@@ -1,4 +1,12 @@
 {
   "schemaVersion": 1,
-  "exceptions": []
+  "exceptions": [
+    {
+      "package": "braces",
+      "advisory": "GHSA-vfj7-8cjw-p6xm",
+      "scope": "dev",
+      "reason": "Only reached through eslint-config-next during source linting; the standalone production image omits this dependency, and the advisory has no patched braces release.",
+      "expires": "2026-11-14"
+    }
+  ]
 }
